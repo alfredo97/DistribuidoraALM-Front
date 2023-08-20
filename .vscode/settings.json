@@ -1,0 +1,8 @@
+// {
+//     "appService.defaultWebAppToDeploy": "/subscriptions/099a7b86-2ba9-4e8b-aae7-2e32ead7d7bc/resourceGroups/opeth/providers/Microsoft.Web/sites/distribuidora-alm",
+//     "appService.deploySubpath": ".",
+//     "appService.zipIgnorePattern": [
+//         "node_modules{,/**}",
+//         ".vscode{,/**}"
+//     ]
+// }

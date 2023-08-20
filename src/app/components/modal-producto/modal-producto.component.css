@@ -1,0 +1,21 @@
+.titulo {
+    font-weight: bold;
+}
+
+.card {
+    margin-left: 30px;
+    margin-right: 30px;
+    border: none
+}
+
+.far {
+    cursor: pointer;
+}
+
+.green-icon{
+    color: #198754;
+}
+
+.red-icon{
+    color: #dc3545;
+}

@@ -1,0 +1,82 @@
+
+<div class="mat-dialog-content" style="overflow: hidden;">
+    <div class="row mt-4" style="align-items: center;">
+        <div class="col-lg-12">
+            <div class="card" >
+                <div class="card-body">
+                    <h1 style="margin-bottom: 40px;" class="titulo">{{ accion | uppercase}} PRODUCTO</h1>
+                    <form [formGroup]="form" (ngSubmit)="agregarModificarProducto()">
+                        <div class="input-group mb-3">
+                            <label style="width: 24%; align-self: center; font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Nombre: &nbsp;</label>
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('nombre')?.valid"
+                                [class.red-icon]="this.form.get('nombre')?.invalid && this.form.get('nombre')?.touched"></i></span>
+                            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nomnbre">
+                        </div>
+                        <!-- <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('tipoProducto')?.valid"
+                                [class.red-icon]="this.form.get('tipoProducto')?.invalid && this.form.get('tipoProducto')?.touched"></i></span>
+                            <input formControlName="tipoProducto" type="text" class="form-control" placeholder="Tipo Producto" aria-label="Tipo Producto">
+                        </div> -->
+                        <div class="input-group mb-3">
+                            <label style="width: 24%; align-self: center; font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Proveedor: &nbsp;</label>
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('idProveedor')?.valid"
+                                [class.red-icon]="this.form.get('idProveedor')?.invalid && this.form.get('idProveedor')?.touched"></i>
+                            </span>
+                            <select id="idProveedor" class="form-select" formControlName="idProveedor">
+                                <option value="0">Seleccione...</option>
+                                <option *ngFor="let proveedor of listProveedores" [value]="proveedor.id">
+                                    {{ proveedor.nombre }}
+                                </option>
+                            </select>
+                            
+                        </div>
+                        <div class="input-group mb-3">
+                            <label style="width: 24%; align-self: center; font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Clave Proveedor: &nbsp;</label>
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('claveProductoProveedor')?.valid"
+                                [class.red-icon]="this.form.get('claveProductoProveedor')?.invalid && this.form.get('claveProductoProveedor')?.touched"></i></span>
+                            <input formControlName="claveProductoProveedor" type="text" class="form-control" placeholder="Clave Proveedor" aria-label="Clave Proveedor">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label style="width: 24%; align-self: center; font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Costo Proveedor: &nbsp;</label>
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('costoProveedor')?.valid"
+                                [class.red-icon]="this.form.get('costoProveedor')?.invalid && this.form.get('costoProveedor')?.touched"></i></span>
+                            <input formControlName="costoProveedor" type="text" class="form-control" placeholder="Costo Proveedor" aria-label="Costo Proveedor">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label style="width: 24%; align-self: center; font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Tipo Producto: &nbsp;</label>
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('tipoProducto')?.valid"
+                                [class.red-icon]="this.form.get('tipoProducto')?.invalid && this.form.get('tipoProducto')?.touched"></i></span>
+                            <select id="tipoProducto" class="form-select" formControlName="tipoProducto">
+                                <option value="0">Seleccione...</option>
+                                <option *ngFor="let tipoProducto of listTiposProducto" [value]="tipoProducto.id">
+                                    {{ tipoProducto.nombre }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label style="width: 24%; align-self: center; font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Precio: &nbsp;</label>
+                            <span class="input-group-text"><i class="fas fa-user" 
+                                [class.green-icon]="this.form.get('precio')?.valid"
+                                [class.red-icon]="this.form.get('precio')?.invalid && this.form.get('precio')?.touched"></i></span>
+                            <input formControlName="precio" type="text" class="form-control" placeholder="Precio" aria-label="Precio">
+                        </div>
+                        <br><br>
+                        <div class="d-grid gap-2">
+                            <button [disabled]="this.form.invalid" type="submit" class="btn btn-success">Aceptar</button>
+                        </div>
+                    </form>
+                    <br>
+                    <div class="d-grid gap-2">
+                        <button (click)="cerrarModal()" class="btn btn-info">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
